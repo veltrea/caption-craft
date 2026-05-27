@@ -1,0 +1,201 @@
+/* CaptionCraft English localization */
+
+/* MARK: - App Menu */
+"app.menu.about" = "About CaptionCraft";
+"app.menu.new_project" = "New Project";
+"app.menu.open_project" = "Open Project…";
+"app.menu.save_project" = "Save Project";
+"app.menu.save_project_as" = "Save Project As…";
+"app.menu.open_video" = "Open Video…";
+"app.menu.open_youtube_url" = "Open YouTube URL…";
+"app.menu.import_srt" = "Import SRT…";
+"app.menu.export_srt" = "Export SRT…";
+"app.menu.undo" = "Undo";
+"app.menu.redo" = "Redo";
+"app.menu.recent_documents" = "Open Recent";
+"app.menu.no_recent_documents" = "No Recent Documents";
+"app.menu.clear_recent_documents" = "Clear Menu";
+
+/* MARK: - App Alerts */
+"app.alert.unsaved_title" = "Save Changes?";
+"app.alert.unsaved_single" = "\"%@\" has unsaved changes. Save before quitting?";
+"app.alert.unsaved_multiple" = "%d projects have unsaved changes. Save before quitting?";
+"app.alert.save_and_quit" = "Save and Quit";
+"app.alert.quit_without_saving" = "Quit Without Saving";
+"app.alert.select_project" = "Select a project file";
+"app.alert.select_video" = "Select a video file";
+
+/* MARK: - About */
+"about.title" = "CaptionCraft";
+"about.version" = "Version %@ (%@)";
+"about.copyright" = "© 2026 Veltrea. All rights reserved.";
+"about.tab.overview" = "Overview";
+"about.tab.license" = "License";
+"about.description" = "CaptionCraft is a macOS app for adding subtitles to videos.";
+"about.description_detail" = "Choose from and combine multiple speech recognition engines (WhisperKit, SenseVoice, faster-whisper, Vosk, Google Cloud Speech) with ensemble processing for high-accuracy automatic subtitle generation. Also supports translation and correction via local LLMs.";
+"about.license_header" = "CaptionCraft uses the following open source software.";
+
+/* MARK: - Editor */
+"editor.title" = "CaptionCraft — Editor";
+"editor.title_untitled" = "CaptionCraft — Untitled";
+"editor.srt.select_file" = "Select SRT subtitle file";
+"editor.srt.no_subtitles_title" = "No subtitles found";
+"editor.srt.no_subtitles_message" = "The selected SRT file contains no valid subtitle entries.";
+"editor.srt.replace_title" = "Replace existing subtitles?";
+"editor.srt.replace_message" = "There are %d existing subtitles. Replace with %d imported subtitles.";
+"editor.srt.replace" = "Replace";
+"editor.srt.no_export_title" = "No subtitles to export";
+"editor.srt.no_export_message" = "Create subtitles first.";
+"editor.srt.save_location" = "Choose save location for SRT file";
+"editor.close.save_title" = "Save Changes?";
+"editor.close.save_message" = "This project has unsaved changes. Save before closing?";
+"editor.close.save" = "Save";
+"editor.close.discard" = "Close Without Saving";
+
+/* MARK: - Caption / Whisper */
+"caption.whisper.title" = "Speech Recognition";
+"caption.whisper.language" = "Language";
+"caption.whisper.lang_ja" = "Japanese (ja)";
+"caption.whisper.lang_en" = "English (en)";
+"caption.whisper.lang_auto" = "Auto-detect";
+"caption.whisper.silence_threshold" = "Silence split threshold (ms)";
+"caption.whisper.max_words" = "Max words per subtitle";
+"caption.whisper.synthesize_all" = "Auto-synthesize all (C)";
+"caption.whisper.no_video" = "No video file found";
+"caption.whisper.loading_model" = "Loading model";
+"caption.whisper.transcribing" = "Transcribing";
+
+/* MARK: - Caption Region Editor */
+"caption.region.select_prompt" = "Select a Caption region from the timeline";
+"caption.region.text" = "Text";
+"caption.region.resynthesize" = "Re-synthesize this region";
+"caption.region.delete" = "Delete";
+"caption.region.listen_loop" = "Listen loop";
+"caption.region.clear_cache" = "Clear cache";
+"caption.region.cache_count" = "Clear pre-render cache (%d items)";
+"caption.region.listening" = "Listen loop active";
+"caption.region.preparing" = "Preparing";
+"caption.region.manually_edited" = "Manually edited";
+"caption.region.low_confidence" = "Low confidence (%.0f%%)";
+"caption.region.auto_synthesized" = "Auto-synthesized (%.0f%%)";
+
+/* MARK: - Dictionary Banner */
+"caption.dict.detected" = "Dictionary entry candidate detected";
+"caption.dict.other_matches" = "%d other occurrences found with the same notation";
+"caption.dict.fix_all" = "Fix all";
+"caption.dict.register_only" = "Add to dictionary only";
+"caption.dict.ignore" = "Ignore";
+
+/* MARK: - Caption List */
+"captionlist.empty" = "Auto-generate with Whisper or import an SRT file.";
+"captionlist.llm_correction" = "LLM Correction";
+"captionlist.translate" = "Translate";
+"captionlist.add_at_position" = "Add subtitle at current playback position";
+"captionlist.seek_to" = "Seek to this subtitle's position";
+"captionlist.delete_subtitle" = "Delete this subtitle";
+
+/* MARK: - Correction History */
+"correction.title" = "Correction";
+"correction.filter.selected" = "Selected";
+"correction.filter.all" = "All";
+"correction.empty" = "No correction history";
+"correction.original" = "Original:";
+"correction.filter_btn.all" = "All";
+"correction.filter_btn.dict" = "📖 Dict";
+"correction.filter_btn.llm" = "🔧 LLM";
+"correction.filter_btn.manual" = "✎ Manual";
+"correction.summary" = "Total: %d (Dict: %d, LLM: %d, Manual: %d)";
+
+/* MARK: - Dictionary Manager */
+"dict.title" = "Correction Dictionary";
+"dict.domain_hint" = "Domain hints";
+"dict.empty" = "No dictionary entries";
+"dict.entry_count" = "%d entries";
+"dict.use_count" = "Used: %d times";
+"dict.new_entry" = "New entry";
+"dict.add" = "Add";
+"dict.add_entry" = "Add entry";
+
+/* MARK: - Translation */
+"translation.title" = "Translation";
+"translation.server" = "LLM Server";
+"translation.server_placeholder" = "http://localhost:1234";
+"translation.model" = "Model";
+"translation.refresh_models" = "Refresh model list";
+"translation.fetching" = "Fetching…";
+"translation.server_disconnected" = "Server disconnected";
+"translation.not_installed" = "LM Studio is not installed";
+"translation.not_installed_detail" = "A local LLM server is required for translation and correction. Please install LM Studio.";
+"translation.download_lmstudio" = "Download LM Studio";
+"translation.not_running" = "LM Studio is not running";
+"translation.not_running_detail" = "Please launch LM Studio and load a model.";
+"translation.launch_lmstudio" = "Launch LM Studio";
+"translation.no_model_loaded" = "No model loaded";
+"translation.no_model_loaded_detail" = "Please download and load a model in LM Studio.";
+"translation.open_lmstudio" = "Open LM Studio";
+"translation.auto_loading" = "Auto-loading model…";
+"translation.auto_loading_wait" = "Waiting for model to load…";
+"translation.load_last_model" = "Load last model";
+"translation.last_used_model" = "Last used: %@\nPlease load a model.";
+"translation.target_language" = "Target language";
+"translation.translate_all" = "Translate all subtitles";
+"translation.no_subtitles" = "No subtitles to translate";
+
+/* MARK: - Right Panel */
+"panel.translation" = "Translation";
+"panel.correction" = "Correction";
+"panel.llm_correction" = "LLM Correction";
+"panel.run_correction" = "Run LLM Correction";
+"panel.correction_help" = "Correct misrecognized proper nouns using local LLM";
+
+/* MARK: - Timeline */
+"timeline.translation" = "Translation";
+"timeline.pre_correction" = "Before correction";
+"timeline.post_correction" = "After correction";
+"timeline.follow_playhead" = "Follow playhead during playback";
+"timeline.zoom_out" = "Zoom out (Cmd+-)";
+"timeline.fit_to_view" = "Fit to view (Cmd+0)";
+"timeline.zoom_in" = "Zoom in (Cmd+=)";
+"timeline.llm_correction" = "LLM Correction";
+"timeline.translate" = "Translate";
+"timeline.no_pre_correction" = "(No pre-correction data)";
+"timeline.uncorrected" = "(Not corrected)";
+
+/* MARK: - Preferences */
+"prefs.general.reset" = "Reset all settings";
+
+/* MARK: - Errors */
+"error.network" = "Network error: %@";
+"error.api" = "API error (HTTP %d): %@";
+"error.parse" = "Response parse error: %@";
+"error.unknown_response" = "Unknown response";
+"error.model_list_parse" = "Failed to parse model list";
+"error.response_parse" = "Failed to parse response";
+"error.no_llm" = "Cannot connect to LLM server. Please check that LM Studio is running.";
+"error.context_encode_failed" = "Failed to encode context inference response";
+"error.context_unknown" = "Unknown";
+
+/* MARK: - Progress */
+"progress.context_inference" = "Inferring context…";
+"progress.correcting" = "LLM correction… (%d/%d)";
+"progress.correcting_single" = "LLM correction…";
+"progress.done" = "Done";
+"progress.translating" = "Translating…";
+"progress.translating_count" = "Translating… (%d/%d)";
+
+/* MARK: - Common */
+"common.cancel" = "Cancel";
+"common.arrow" = "→";
+"common.retry" = "Retry";
+
+/* MARK: - Legacy (ScreenCraft recording errors - will be removed in CC Phase 02) */
+"recording.error.invalid_state" = "Invalid recording state";
+"recording.error.screen_capture.title" = "Screen Recording Permission Required";
+"recording.error.screen_capture.message" = "CaptionCraft needs permission to record the screen. Please enable it in System Settings → Privacy & Security → Screen & System Audio Recording, then quit and relaunch the app.";
+"recording.error.microphone.title" = "Microphone Permission Required";
+"recording.error.microphone.message" = "CaptionCraft needs permission to use the microphone. Please enable it in System Settings → Privacy & Security → Microphone.";
+"recording.error.camera.title" = "Camera Permission Required";
+"recording.error.camera.message" = "CaptionCraft needs permission to use the camera. Please enable it in System Settings → Privacy & Security → Camera.";
+"alert.open_system_settings" = "Open System Settings";
+"alert.cancel" = "Cancel";
+"alert.ok" = "OK";

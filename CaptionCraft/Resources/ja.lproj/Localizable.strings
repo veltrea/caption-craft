@@ -1,0 +1,201 @@
+/* CaptionCraft 日本語ローカライズ */
+
+/* MARK: - App Menu */
+"app.menu.about" = "CaptionCraft について";
+"app.menu.new_project" = "新規プロジェクト";
+"app.menu.open_project" = "プロジェクトを開く…";
+"app.menu.save_project" = "プロジェクトを保存";
+"app.menu.save_project_as" = "プロジェクトを別名で保存…";
+"app.menu.open_video" = "動画を開く…";
+"app.menu.open_youtube_url" = "YouTube URL を開く…";
+"app.menu.import_srt" = "SRT をインポート…";
+"app.menu.export_srt" = "SRT をエクスポート…";
+"app.menu.undo" = "取り消す";
+"app.menu.redo" = "やり直す";
+"app.menu.recent_documents" = "最近使った書類";
+"app.menu.no_recent_documents" = "履歴なし";
+"app.menu.clear_recent_documents" = "履歴をクリア";
+
+/* MARK: - App Alerts */
+"app.alert.unsaved_title" = "変更を保存しますか?";
+"app.alert.unsaved_single" = "「%@」に未保存の変更があります。終了前に保存しますか?";
+"app.alert.unsaved_multiple" = "%d 件のプロジェクトに未保存の変更があります。終了前に保存しますか?";
+"app.alert.save_and_quit" = "保存して終了";
+"app.alert.quit_without_saving" = "保存せず終了";
+"app.alert.select_project" = "プロジェクトファイルを選択";
+"app.alert.select_video" = "動画ファイルを選択";
+
+/* MARK: - About */
+"about.title" = "CaptionCraft";
+"about.version" = "バージョン %@ (%@)";
+"about.copyright" = "© 2026 Veltrea. All rights reserved.";
+"about.tab.overview" = "概要";
+"about.tab.license" = "ライセンス";
+"about.description" = "CaptionCraft は動画に字幕を付けるための macOS アプリです。";
+"about.description_detail" = "複数の音声認識エンジン（WhisperKit・SenseVoice・faster-whisper・Vosk・Google Cloud Speech）を選択・併用でき、アンサンブル処理で高精度な字幕を自動生成します。ローカル LLM による翻訳・校正にも対応しています。";
+"about.license_header" = "CaptionCraft は以下のオープンソースソフトウェアを使用しています。";
+
+/* MARK: - Editor */
+"editor.title" = "CaptionCraft — エディター";
+"editor.title_untitled" = "CaptionCraft — 無題";
+"editor.srt.select_file" = "SRT 字幕ファイルを選択";
+"editor.srt.no_subtitles_title" = "字幕が見つかりません";
+"editor.srt.no_subtitles_message" = "選択された SRT ファイルに有効な字幕エントリがありませんでした。";
+"editor.srt.replace_title" = "既存の字幕を置き換えますか?";
+"editor.srt.replace_message" = "現在 %d 件の字幕があります。読み込んだ %d 件で置き換えます。";
+"editor.srt.replace" = "置き換え";
+"editor.srt.no_export_title" = "書き出す字幕がありません";
+"editor.srt.no_export_message" = "先に字幕を作成してください。";
+"editor.srt.save_location" = "SRT ファイルの保存先を選択";
+"editor.close.save_title" = "変更を保存しますか?";
+"editor.close.save_message" = "このプロジェクトに未保存の変更があります。閉じる前に保存しますか?";
+"editor.close.save" = "保存";
+"editor.close.discard" = "保存せず閉じる";
+
+/* MARK: - Caption / Whisper */
+"caption.whisper.title" = "音声認識";
+"caption.whisper.language" = "言語";
+"caption.whisper.lang_ja" = "日本語 (ja)";
+"caption.whisper.lang_en" = "English (en)";
+"caption.whisper.lang_auto" = "自動検出";
+"caption.whisper.silence_threshold" = "無音分割閾値 (ms)";
+"caption.whisper.max_words" = "1 字幕の最大単語数";
+"caption.whisper.synthesize_all" = "全体を自動合成 (C)";
+"caption.whisper.no_video" = "動画ファイルが見つかりません";
+"caption.whisper.loading_model" = "モデル読み込み中";
+"caption.whisper.transcribing" = "文字起こし中";
+
+/* MARK: - Caption Region Editor */
+"caption.region.select_prompt" = "タイムラインから Caption リージョンを選択してください";
+"caption.region.text" = "テキスト";
+"caption.region.resynthesize" = "この region を再合成";
+"caption.region.delete" = "削除";
+"caption.region.listen_loop" = "聴き直しループ";
+"caption.region.clear_cache" = "キャッシュ削除";
+"caption.region.cache_count" = "プリレンダーキャッシュを削除 (%d 件)";
+"caption.region.listening" = "聴き直しループ中";
+"caption.region.preparing" = "準備中";
+"caption.region.manually_edited" = "手修正済み";
+"caption.region.low_confidence" = "低信頼度 (%.0f%%)";
+"caption.region.auto_synthesized" = "自動合成 (%.0f%%)";
+
+/* MARK: - Dictionary Banner */
+"caption.dict.detected" = "辞書登録候補を検出";
+"caption.dict.other_matches" = "他に %d 箇所で同じ表記が見つかりました";
+"caption.dict.fix_all" = "すべて修正";
+"caption.dict.register_only" = "辞書に登録のみ";
+"caption.dict.ignore" = "無視";
+
+/* MARK: - Caption List */
+"captionlist.empty" = "Whisper で自動生成するか、SRT ファイルを読み込んでください。";
+"captionlist.llm_correction" = "LLM 校正";
+"captionlist.translate" = "翻訳";
+"captionlist.add_at_position" = "現在の再生位置に字幕を追加";
+"captionlist.seek_to" = "この字幕の位置にシーク";
+"captionlist.delete_subtitle" = "この字幕を削除";
+
+/* MARK: - Correction History */
+"correction.title" = "校正";
+"correction.filter.selected" = "選択中";
+"correction.filter.all" = "全体";
+"correction.empty" = "校正履歴はありません";
+"correction.original" = "原文:";
+"correction.filter_btn.all" = "全て";
+"correction.filter_btn.dict" = "📖 辞書";
+"correction.filter_btn.llm" = "🔧 LLM";
+"correction.filter_btn.manual" = "✎ 手動";
+"correction.summary" = "合計: %d 件 (辞書: %d, LLM: %d, 手動: %d)";
+
+/* MARK: - Dictionary Manager */
+"dict.title" = "校正辞書";
+"dict.domain_hint" = "ドメインヒント";
+"dict.empty" = "辞書エントリはありません";
+"dict.entry_count" = "%d 件";
+"dict.use_count" = "使用: %d回";
+"dict.new_entry" = "新規エントリ";
+"dict.add" = "追加";
+"dict.add_entry" = "エントリを追加";
+
+/* MARK: - Translation */
+"translation.title" = "翻訳";
+"translation.server" = "LLM サーバー";
+"translation.server_placeholder" = "http://localhost:1234";
+"translation.model" = "モデル";
+"translation.refresh_models" = "モデル一覧を再取得";
+"translation.fetching" = "取得中…";
+"translation.server_disconnected" = "サーバー未接続";
+"translation.not_installed" = "LM Studio がインストールされていません";
+"translation.not_installed_detail" = "翻訳・校正にはローカル LLM サーバーが必要です。LM Studio をインストールしてください。";
+"translation.download_lmstudio" = "LM Studio をダウンロード";
+"translation.not_running" = "LM Studio が起動していません";
+"translation.not_running_detail" = "LM Studio を起動してモデルを読み込んでください。";
+"translation.launch_lmstudio" = "LM Studio を起動";
+"translation.no_model_loaded" = "モデルが読み込まれていません";
+"translation.no_model_loaded_detail" = "LM Studio でモデルをダウンロードして読み込んでください。";
+"translation.open_lmstudio" = "LM Studio を開く";
+"translation.auto_loading" = "モデルを自動ロード中…";
+"translation.auto_loading_wait" = "モデルの読み込みを待っています…";
+"translation.load_last_model" = "前回のモデルをロード";
+"translation.last_used_model" = "前回使用: %@\nモデルをロードしてください。";
+"translation.target_language" = "翻訳先";
+"translation.translate_all" = "全字幕を翻訳";
+"translation.no_subtitles" = "翻訳する字幕がありません";
+
+/* MARK: - Right Panel */
+"panel.translation" = "翻訳";
+"panel.correction" = "校正";
+"panel.llm_correction" = "LLM 校正";
+"panel.run_correction" = "LLM 校正を実行";
+"panel.correction_help" = "ローカル LLM で固有名詞の誤認識を校正します";
+
+/* MARK: - Timeline */
+"timeline.translation" = "翻訳";
+"timeline.pre_correction" = "校正前";
+"timeline.post_correction" = "校正後";
+"timeline.follow_playhead" = "再生中にプレイヘッドを追従";
+"timeline.zoom_out" = "ズームアウト (Cmd+-)";
+"timeline.fit_to_view" = "画面に合わせる (Cmd+0)";
+"timeline.zoom_in" = "ズームイン (Cmd+=)";
+"timeline.llm_correction" = "LLM 校正";
+"timeline.translate" = "翻訳";
+"timeline.no_pre_correction" = "(校正前データなし)";
+"timeline.uncorrected" = "(未校正)";
+
+/* MARK: - Preferences */
+"prefs.general.reset" = "すべての設定をリセット";
+
+/* MARK: - Errors */
+"error.network" = "ネットワークエラー: %@";
+"error.api" = "API エラー (HTTP %d): %@";
+"error.parse" = "レスポンス解析エラー: %@";
+"error.unknown_response" = "不明なレスポンス";
+"error.model_list_parse" = "モデル一覧の解析に失敗";
+"error.response_parse" = "レスポンスの解析に失敗";
+"error.no_llm" = "LLM サーバーに接続できません。LM Studio が起動しているか確認してください。";
+"error.context_encode_failed" = "文脈推定レスポンスのエンコードに失敗";
+"error.context_unknown" = "不明";
+
+/* MARK: - Progress */
+"progress.context_inference" = "文脈推定中…";
+"progress.correcting" = "LLM 校正中… (%d/%d)";
+"progress.correcting_single" = "LLM 校正中…";
+"progress.done" = "完了";
+"progress.translating" = "翻訳中…";
+"progress.translating_count" = "翻訳中… (%d/%d)";
+
+/* MARK: - Common */
+"common.cancel" = "キャンセル";
+"common.arrow" = "→";
+"common.retry" = "再試行";
+
+/* MARK: - Legacy (ScreenCraft recording errors - will be removed in CC Phase 02) */
+"recording.error.invalid_state" = "録画の状態が不正です";
+"recording.error.screen_capture.title" = "画面収録の許可が必要です";
+"recording.error.screen_capture.message" = "CaptionCraft で画面を録画するには、システム設定で許可が必要です。「プライバシーとセキュリティ」→「画面収録とシステムオーディオ録音」で CaptionCraft をオンにしたあと、アプリを完全終了してから再起動してください。";
+"recording.error.microphone.title" = "マイクの許可が必要です";
+"recording.error.microphone.message" = "CaptionCraft でマイク音声を録音するには、システム設定の「プライバシーとセキュリティ」→「マイク」で CaptionCraft をオンにしてください。";
+"recording.error.camera.title" = "カメラの許可が必要です";
+"recording.error.camera.message" = "CaptionCraft でカメラを使用するには、システム設定の「プライバシーとセキュリティ」→「カメラ」で CaptionCraft をオンにしてください。";
+"alert.open_system_settings" = "システム設定を開く";
+"alert.cancel" = "キャンセル";
+"alert.ok" = "OK";

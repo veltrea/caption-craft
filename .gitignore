@@ -1,0 +1,54 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Xcode
+**/xcuserdata/
+**/*.xcuserstate
+**/DerivedData/
+/build/
+/CaptionCraft.xcodeproj/project.xcworkspace/xcuserdata/
+/CaptionCraft.xcodeproj/xcuserdata/
+
+# Swift Package Manager (for future SPM integration)
+.build/
+.swiftpm/xcode/xcuserdata/
+Package.resolved
+
+# Python E2E runner
+e2e/.venv/
+e2e/__pycache__/
+e2e/**/__pycache__/
+e2e/*.pyc
+e2e/*.pyo
+
+# E2E runtime output (tmp)
+/tmp/captioncraft-e2e/
+
+# Logs (E2E runtime)
+*.log
+*.log.old
+
+# Editor / IDE
+.vscode/
+.idea/
+.cursor/
+.claude/
+
+*.swp
+*.swo
+
+# Env / secrets
+.env
+.env.local
+
+# Private / generated
+TODO.md
+docs/ARCHITECTURE.html
+
+# macOS (specific)
+Icon
+._*
+
+# Release artifacts
+dist/

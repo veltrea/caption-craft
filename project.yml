@@ -1,0 +1,96 @@
+name: CaptionCraft
+
+options:
+  bundleIdPrefix: com.veltrea
+  # soniqo/speech-swift (Parakeet TDT) が macOS 15.0+ 要件のため bump。
+  # WhisperKit も 14+ なので影響なし。
+  deploymentTarget:
+    macOS: "15.0"
+  xcodeVersion: "16.4"
+  createIntermediateGroups: true
+
+# Whisper ランタイム (Apple Silicon で CoreML + Neural Engine 最適化)。
+# Parakeet TDT は NVIDIA FastConformer + TDT decoder。Whisper と全く違う系統で
+# 欧州25言語に特化。soniqo/speech-swift で CoreML + Neural Engine ネイティブ実装。
+packages:
+  WhisperKit:
+    url: https://github.com/argmaxinc/WhisperKit
+    from: "0.9.0"
+  SpeechSwift:
+    url: https://github.com/soniqo/speech-swift
+    branch: main
+
+targets:
+  CaptionCraft:
+    type: application
+    platform: macOS
+    deploymentTarget: "15.0"
+    dependencies:
+      - package: WhisperKit
+      - package: SpeechSwift
+        product: ParakeetASR
+      - package: SpeechSwift
+        product: Qwen3ASR
+      - package: SpeechSwift
+        product: AudioCommon
+      - package: SpeechSwift
+        product: SpeechVAD
+      - sdk: Accelerate.framework
+    sources:
+      - path: CaptionCraft
+        excludes:
+          - "Resources/Info.plist"
+          - "Vendor/RubberBand"
+    info:
+      path: CaptionCraft/Resources/Info.plist
+      properties:
+        CFBundleName: CaptionCraft
+        CFBundleDisplayName: CaptionCraft
+        # CaptionCraft 初回リリースは 0.1.0。
+        CFBundleShortVersionString: "0.1.0"
+        CFBundleVersion: "1"
+        LSMinimumSystemVersion: "15.0"
+        NSPrincipalClass: NSApplication
+        # YouTube モードの音声キャプチャに ScreenCaptureKit を使用する。
+        NSScreenCaptureUsageDescription: "CaptionCraft は YouTube 動画の音声をキャプチャして字幕を生成するために画面収録権限を使用します。"
+        NSMicrophoneUsageDescription: "CaptionCraft は外部マイク入力を字幕生成のソースとして使用する場合があります。"
+        NSCameraUsageDescription: "CaptionCraft はカメラ入力を字幕生成のソースとして使用する場合があります。"
+        NSSpeechRecognitionUsageDescription: "CaptionCraft は Apple の音声認識を使って字幕を自動生成します。"
+        NSHumanReadableCopyright: "© 2026 Veltrea. All rights reserved."
+        # VOICEVOX / AivisSpeech など localhost HTTP TTS エンジンへの接続を許可する。
+        # これが無いと ATS がサイレントに HTTP を遮断し、話者一覧が空になる。
+        # CC Phase 03 で TTS 削除時に NSAppTransportSecurity も削除候補。
+        NSAppTransportSecurity:
+          NSAllowsLocalNetworking: true
+    entitlements:
+      path: CaptionCraft/CaptionCraft.entitlements
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.veltrea.captioncraft
+        SWIFT_VERSION: "5.10"
+        MACOSX_DEPLOYMENT_TARGET: "15.0"
+        CODE_SIGN_STYLE: Manual
+        CLANG_CXX_LANGUAGE_STANDARD: "c++17"
+        CLANG_CXX_LIBRARY: "libc++"
+        HEADER_SEARCH_PATHS:
+          - "$(SRCROOT)/CaptionCraft/Vendor/Signalsmith"
+          - "$(SRCROOT)/CaptionCraft/Vendor/Signalsmith/signalsmith-linear"
+        # ローカル開発用の自己署名証明書。ad-hoc 署名だと再ビルドごとに CDHash が変わり
+        # TCC (画面収録/マイク/カメラの許可) が毎回リセットされてしまうため、
+        # 安定した Designated Requirement を得る目的で自己署名 cert を使う。
+        # cert は `security import` で login.keychain に入っている前提。
+        # 詳細: TASKS/PERMISSIONS_GUIDE.md §1.2
+        CODE_SIGN_IDENTITY: "CaptionCraft Local Dev"
+        CODE_SIGNING_REQUIRED: "YES"
+        CODE_SIGNING_ALLOWED: "YES"
+        ENABLE_HARDENED_RUNTIME: "NO"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        SWIFT_OBJC_BRIDGING_HEADER: "CaptionCraft/CaptionCraft-Bridging-Header.h"
+      configs:
+        Debug:
+          DEBUG_INFORMATION_FORMAT: dwarf
+          SWIFT_OPTIMIZATION_LEVEL: "-Onone"
+          SWIFT_ACTIVE_COMPILATION_CONDITIONS: DEBUG
+        Release:
+          DEBUG_INFORMATION_FORMAT: "dwarf-with-dsym"
+          SWIFT_OPTIMIZATION_LEVEL: "-O"
